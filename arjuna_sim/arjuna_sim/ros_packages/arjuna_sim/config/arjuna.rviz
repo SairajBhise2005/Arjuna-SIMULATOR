@@ -1,0 +1,88 @@
+Panels:
+  - Class: rviz/Displays
+    Name: Displays
+  - Class: rviz/Views
+    Name: Views
+
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz/Grid
+      Name: Grid
+      Plane: XY
+      Color: 160;160;164
+      Cell Size: 0.5
+      Line Style:
+        Line Width: 0.03
+        Value: Lines
+      Plane Cell Count: 20
+      Value: true
+
+    - Class: rviz/RobotModel
+      Name: RobotModel
+      Robot Description: robot_description
+      Value: true
+
+    - Class: rviz/TF
+      Name: TF
+      Value: false
+      Marker Scale: 0.5
+
+    - Class: rviz/LaserScan
+      Name: "LiDAR /scan"
+      Topic: /scan
+      Color: 255;0;0
+      Color Transformer: FlatColor
+      Size (m): 0.05
+      Value: true
+
+    - Class: rviz/Image
+      Name: "Camera /frames"
+      Topic: /frames
+      Value: true
+
+    - Class: rviz/PointCloud2
+      Name: "Depth Cloud"
+      Topic: /oak/depth/points
+      Color Transformer: AxisColor
+      Axis: Z
+      Value: true
+
+    - Class: rviz/Odometry
+      Name: Odometry
+      Topic: /odom
+      Keep: 50
+      Value: true
+
+    - Class: rviz/Path
+      Name: Path
+      Topic: /move_base/NavfnROS/plan
+      Color: 0;255;0
+      Value: false
+
+    - Class: rviz/Map
+      Name: Map
+      Topic: /map
+      Value: false
+
+  Global Options:
+    Background Color: 48;48;48
+    Fixed Frame: odom
+    Frame Rate: 30
+
+  Tools:
+    - Class: rviz/Interact
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/SetInitialPose
+      Topic: /initial_2d
+    - Class: rviz/SetGoal
+      Topic: /goal_pose
+
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 2.5
+      Pitch: 0.6
+      Target Frame: base_link
+      Yaw: 3.14
